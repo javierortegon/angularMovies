@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "frontMovies"
+    }
+  },
+  "defaultProject": "frontMovies",
+  "cli": {
+    "analytics": false
+  }
 }

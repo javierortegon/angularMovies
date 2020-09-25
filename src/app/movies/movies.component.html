@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Create Movie</div>
+
+            <div class="card-body">
+                <form [formGroup]="movieForm">
+
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                        <div class="col-md-6">
+                            <input formControlName="name" id="name" type="text" class="form-control" name="name" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Description</label>
+                        <div class="col-md-6">
+                            <textarea formControlName="description" id="description" name="description" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" (click)="sendForm()">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header">Movies</div>
+
+            <div class="card-body">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let movieData of moviesData">
+                            <td>{{ movieData.name }}</td>
+                            <td>{{ movieData.description }}</td>
+                            <td>{{ movieData.user }}</td>
+                            <td>{{ movieData.status }}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
